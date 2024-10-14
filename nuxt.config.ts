@@ -1,15 +1,10 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+import Aura from '@primevue/themes/aura';
+
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
   future: {
     compatibilityVersion: 4,
-  },
-
-  srcDir: '.',
-
-  dir: {
-    app: 'app'
   },
 
   experimental: {
@@ -29,6 +24,22 @@ export default defineNuxtConfig({
   unhead: {
     renderSSRHeadOptions: {
       omitLineBreaks: false
+    }
+  },
+
+  modules: [
+    '@primevue/nuxt-module'
+  ],
+
+  css: [
+    './assets/styles/global.css',
+  ],
+
+  primevue: {
+    options: {
+      theme: {
+        preset: Aura,
+      }
     }
   }
 })
